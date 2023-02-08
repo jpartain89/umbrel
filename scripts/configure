@@ -22,7 +22,7 @@ if [ ! "$(uname -s)" == "Linux" ]; then
   exit 1
 fi
 
-check_dependencies docker docker-compose dirname readlink
+check_dependencies 'docker' 'docker compose' 'dirname' 'readlink'
 
 # Switch to Umbrel's root directory
 UMBREL_ROOT="$(readlink -f "$(dirname "${BASH_SOURCE[0]}")"/..)"

@@ -25,7 +25,7 @@ Commands:
     start                      Starts an installed app
     stop                       Stops an installed app
     restart                    Restarts an installed app
-    compose                    Passes all arguments to docker-compose
+    compose                    Passes all arguments to docker compose
     ls-installed               Lists installed apps
 EOF
 }
@@ -140,7 +140,7 @@ source_app() {
 }
 
 # Check dependencies
-check_dependencies docker-compose jq yq openssl envsubst
+check_dependencies 'docker compose' jq yq openssl envsubst
 
 if [ -z ${1+x} ]; then
   command=""
@@ -245,7 +245,7 @@ compose() {
   # Merge compose files and args. passed into 'compose'
   compose_args=("${compose_files[@]}" "${@}")
 
-  docker-compose \
+  docker compose \
     --env-file "${umbrel_env_file}" \
     --project-name "${app}" \
     "${compose_args[@]}"

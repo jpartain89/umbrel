@@ -86,7 +86,7 @@ PREV_ENV_FILE="${UMBREL_ROOT}/.env" ./scripts/configure
 echo "Pulling new containers"
 updateStatus 50 "Pulling new containers"
 
-docker-compose pull
+docker compose pull
 
 # Change back to main install dir
 cd "$UMBREL_ROOT"
