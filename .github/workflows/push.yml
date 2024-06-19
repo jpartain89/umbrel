@@ -10,7 +10,7 @@ jobs:
     steps:
     - name: Run apt update
       run: sudo apt update
-    - name: Install dependencies
+    - name: Install dependencies 
       run: sudo apt -y install quilt qemu-user-static debootstrap libarchive-tools jq
     - name: Nuke current Docker installation
       run: |
